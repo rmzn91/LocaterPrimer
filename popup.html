@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Element Selector Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Element Selector Generator</h1>
+
+    <div class="selector-mode">
+      <label>
+        <input type="radio" name="selector-type" value="xpath" checked> XPath
+      </label>
+      <label>
+        <input type="radio" name="selector-type" value="css"> CSS Seçici
+      </label>
+    </div>
+
+    <div class="button-container">
+      <button id="activate-selector">Element Seç</button>
+    </div>
+
+    <div class="result-container">
+      <h2>Sonuç</h2>
+      <div class="result-box">
+        <pre id="selector-result">Henüz bir element seçilmedi</pre>
+      </div>
+      <div class="validation-result" id="validation-result"></div>
+      <button id="copy-selector" disabled>Kopyala</button>
+    </div>
+
+    <div class="settings">
+      <h2>Ayarlar</h2>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="shadow-dom"> Shadow DOM Desteği
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="iframe-support"> iFrame Desteği (Deneysel)
+        </label>
+      </div>
+    </div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+
+</html>

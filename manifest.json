@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Element Seçici Üretici",
+  "version": "1.0",
+  "description": "Web sayfalarında XPath ve CSS seçicileri oluşturmak için kullanışlı bir araç",
+  "permissions": ["activeTab", "scripting", "clipboardWrite", "storage"],
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    },
+    "default_title": "Element Seçici Üretici"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-bundle.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["ui.js", "selectors.js", "highlight.js", "storage.js", "utils.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
